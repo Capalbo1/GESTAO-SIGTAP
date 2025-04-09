@@ -1,0 +1,10 @@
+/* Error State */
+.is-error .form-input {
+    border-color: #e53e3e;
+  }
+  
+  .error-message {
+    color: #e53e3e;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
