@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { login } from '../../services/api';
+import { login } from '../services/api';
 import '../../styles/main.css';  // Estilos SMACSS/OOCSS
 
 export default function Login() {

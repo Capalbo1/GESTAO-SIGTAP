@@ -1,16 +1,32 @@
-/* Classes reutilizáveis para estrutura */
 .auth-container {
-    display: flex;
-    min-height: 100vh;
-    align-items: center;
-    justify-content: center;
-  }
-  
+  display: flex;
+  min-height: 100vh;
+  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom right, #e6f6eb, #d1fae5);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+              0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border: 1px solid #dcfce7;
+}
+
+.auth-card:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
   .auth-card {
-    width: 100%;
-    max-width: 400px;
-    padding: 2rem;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.75rem;
+    margin: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   }
+}

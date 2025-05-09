@@ -1,10 +1,22 @@
-/* Error State */
 .is-error .form-input {
-    border-color: #e53e3e;
-  }
-  
-  .error-message {
-    color: #e53e3e;
-    font-size: 0.875rem;
-    margin-top: 0.25rem;
-  }
+  border-color: var(--error-color);
+  background: #fef2f2;
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  background: #fef2f2;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid #fecaca;
+}
+
+.error-message::before {
+  content: '⚠';
+  font-size: 1.1rem;
+}

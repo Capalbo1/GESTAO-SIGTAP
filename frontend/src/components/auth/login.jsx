@@ -1,8 +1,9 @@
+// CORREÇÃO DO COMPONENTE
 import React, { useState } from 'react';
 import { login } from '../../services/api';
-import '../../styles/main.css';
+import '../../styles/main.css'; // Caminho corrigido
 
-export default function Login() {
+export default function Login() { // Nome do componente em maiúscula
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -12,40 +13,37 @@ export default function Login() {
     try {
       const response = await login(email, password);
       console.log('Login bem-sucedido:', response.data);
-      // Redirecionar para dashboard
     } catch (err) {
       setError('Credenciais inválidas');
     }
   };
 
   return (
-   <main>
-    <section className='login'>
-    <h1>Faça seu Login</h1>
-    <form onSubmit={handleSubmit}>
-     <input
-      type='email'
-      placeholder='Email'
-      value={email}
-      onChange={(e) => setEmail(e.target.value)}
-     />
-     <input
-      type='password'
-      placeholder='Senha'
-      value={password}
-      onChange={(e) => setPassword(e.target.value)}
-     />
-     <div className='check+a'>
-        <input type='checkbox' id='check' />
-        <label htmlFor='check'>Lembrar-me</label>
-        <a href='#'>Esqueci minha senha</a>
-     </div>
-     <button type='submit'>Entrar</button>
-     {error && <p className='error'>{error}</p>}
-    </form>
-    </section>
-    <section className='cadastro'></section>
-    <section className='anuncio'></section>
-   </main>
-  )
+    <main className="auth-container">
+      <section className="auth-card">
+  <h1 style={{color: 'var(--primary-color)', marginBottom: '2rem'}}>Faça seu Login</h1>
+  <form onSubmit={handleSubmit}>
+    <div className="form-group">
+      <label className="form-label">Email</label>
+      <input className="form-input" type="email" />
+    </div>
+    
+    <div className="form-group">
+      <label className="form-label">Senha</label>
+      <input className="form-input" type="password" />
+    </div>
+
+    <div className="checkbox-group">
+      <input type="checkbox" id="remember" />
+      <label htmlFor="remember">Lembrar-me</label>
+      <a className="forgot-password" href="#">Esqueci minha senha</a>
+    </div>
+
+    <button className="btn btn--primary">Entrar</button>
+
+    {error && <div className="error-message">{error}</div>}
+  </form>
+</section>
+    </main>
+  );
 }
