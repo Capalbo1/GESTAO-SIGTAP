@@ -21,7 +21,7 @@ export default function Login() { // Nome do componente em maiúscula
   return (
     <main className="auth-container">
       <section className="auth-card">
-  <h1 style={{color: 'var(--primary-color)', marginBottom: '2rem'}}>Faça seu Login</h1>
+  <h1>Gestão Sigtap</h1>
   <form onSubmit={handleSubmit}>
     <div className="form-group">
       <label className="form-label">Email</label>
